@@ -11,7 +11,7 @@
         private readonly double y2;
         private readonly double x3;
         private readonly double y3;
-        private bool useCoords = false;
+        private readonly bool useCoords = false;
 
         public Triangle(string name, double a, double b, double c) : base(name)
         {
@@ -71,12 +71,12 @@
             }
         }
 
-        private double GetSideLengthByCoords(double n1, double m1, double n2, double m2)
+        private static double GetSideLengthByCoords(double n1, double m1, double n2, double m2)
         {
             return Math.Sqrt(Math.Pow(n2 - n1, 2) + Math.Pow(m2 - m1, 2));
         }
 
-        private double GetTriangleAreaByThreeSides(double sA, double sB, double sC)
+        private static double GetTriangleAreaByThreeSides(double sA, double sB, double sC)
         {
             double perimeter;
             double area;
@@ -87,8 +87,7 @@
 
         public override void TryToPlaceSegmentInsideFigure(double segmLength) 
         {
-            bool could = true;
-
+            bool could;
             switch (useCoords)
             {
                 case false:

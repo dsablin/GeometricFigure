@@ -13,13 +13,15 @@
         {
             get
             {
-                return Math.PI * Math.Sqrt(radius);
+                return Math.PI * Math.Pow(radius, 2);
             }
         }
 
         public override void TryToPlaceSegmentInsideFigure(double segmLength)
         {
-            throw new NotImplementedException();
+            bool could = segmLength <= radius * 2;
+
+            Console.WriteLine($"The segment of the length '{segmLength}' {(could ? "could" : "couldn't")} be put into the {Name}");
         }
     }
 }

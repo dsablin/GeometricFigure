@@ -11,11 +11,11 @@
             this.y1 = y1;
         }
 
-        public override double Area => throw new Exception("Error! Couldn't calculate one-dimensional object's area.");
+        public override double Area => 
+            throw new Exception("Error! Couldn't calculate area of one-dimensional object.");
 
-        public override void TryToPlaceSegmentInsideFigure(double segmLength)
-        {
-            throw new NotImplementedException();
+        public override void TryToPlaceSegmentInsideFigure(double segmLength) => 
+            throw new Exception("Error! Couldn't put segment into a point.");
         }
     }
 }

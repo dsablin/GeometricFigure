@@ -20,7 +20,7 @@
         public override void TryToPlaceSegmentInsideFigure(double segmLength)
         {
 
-            bool could = segmLength <= Math.Sqrt(Math.Pow(a, 2));
+            bool could = segmLength <= a * Math.Sqrt(2);
 
             Console.WriteLine($"The segment of the length given {(could ? "could" : "couldn't")} be put into the {Name}");
         }
