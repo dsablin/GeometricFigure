@@ -126,3 +126,8 @@ Desktop.ini
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
+*.v2
+*.vsidx
+*.lock
+/.vs/ProjectEvaluation/figure.metadata.v5.2
+/.vs/ProjectEvaluation/figure.projects.v5.2
