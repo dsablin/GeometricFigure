@@ -11,11 +11,9 @@
 
         public override double Area => throw new Exception("Error! Couldn't calculate area of one-dimensional object.");
 
-        public override void TryToPlaceSegmentInsideFigure(double segmLength)
+        public override bool CouldPlaceSegmentInsideFigure(double segmLength)
         {
-            bool could = segmLength <= length;
-
-            Console.WriteLine($"The segment of the length '{segmLength}' {(could ? "doesn't exceed" : "exceeds")} length of the current {Name}");
+            return segmLength <= length;
         }
     }
 }

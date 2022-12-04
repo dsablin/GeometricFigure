@@ -85,29 +85,21 @@
             return area;
         }
 
-        public override void TryToPlaceSegmentInsideFigure(double segmLength) 
+        public override bool CouldPlaceSegmentInsideFigure(double segmLength) 
         {
-            bool could;
             switch (useCoords)
             {
                 case false:
-                    could = IsSegmentInsideTriangle(a, b, c, segmLength);
-                    break;
+                    return IsSegmentInsideTriangle(a, b, c, segmLength);
 
                 case true:
                     double sideA = GetSideLengthByCoords(x1, y1, x2, y2);
                     double sideB = GetSideLengthByCoords(x2, y2, x3, y3);
                     double sideC = GetSideLengthByCoords(x3, y3, x1, y1);
 
-                    could = IsSegmentInsideTriangle(sideA, sideB, sideC, segmLength);
-                    break;
-
-                default:
-                    throw new Exception("Necessary parameter 'useCoords' is missed.");
+                    return IsSegmentInsideTriangle(sideA, sideB, sideC, segmLength);
             }
-
-            Console.WriteLine($"The segment of the length '{segmLength}' {(could ? "could" : "couldn't")} be put into the {Name}");
-        }
+       }
 
         private static bool IsSegmentInsideTriangle(double a, double b, double c, double segmLength)
         {

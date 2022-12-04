@@ -17,11 +17,9 @@
             }
         }
 
-        public override void TryToPlaceSegmentInsideFigure(double segmLength)
+        public override bool CouldPlaceSegmentInsideFigure(double segmLength)
         {
-            bool could = segmLength <= radius * 2;
-
-            Console.WriteLine($"The segment of the length '{segmLength}' {(could ? "could" : "couldn't")} be put into the {Name}");
+            return segmLength <= radius * 2;
         }
     }
 }

@@ -26,6 +26,6 @@ namespace FigureProject
             set { color = value; }
         }
 
-        public virtual void TryToPlaceSegmentInsideFigure(double segmLength) { }
+        public abstract bool CouldPlaceSegmentInsideFigure(double segmLength);
     }
 }
